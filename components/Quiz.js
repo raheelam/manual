@@ -15,12 +15,14 @@ export default function Quiz({ setIsQuizMode }) {
 
   useEffect(() => {
     getQuestions();
-    console.log(questions);
   }, []);
 
-  console.log(questions);
   if (questions.length === 0) {
-    return <></>;
+    return (
+      <div className="bg-primaryLight h-full w-full flex justify-center items-center">
+        <p className="text-xl lg:text-3xl"> Loading...</p>
+      </div>
+    );
   }
 
   return (
@@ -35,7 +37,7 @@ export default function Quiz({ setIsQuizMode }) {
         <div className="absolute text-sm top-4 left-6 text-black   ">
           <div>
             <h1 className="font-bold">Manual Quiz</h1>
-            <p>Please select an option</p>
+            <p>Please choose one option</p>
           </div>
         </div>
         {!isEnd && (
