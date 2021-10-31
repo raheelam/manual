@@ -16,7 +16,7 @@ https://manual-ashen.vercel.app/
 1.  Git clone this repository `https://github.com/raheelam/manual`
 2.  Change your directory `cd manual`
 3.  Install all dependencies `npm install`
-4.  Start the app `npm start` for development
+4.  Start the app `npm run dev` for development
 5.  Navigate to `localhost:3000` in your browser (or the available port)
 
 ## Features
