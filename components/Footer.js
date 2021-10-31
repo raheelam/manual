@@ -29,13 +29,13 @@ const Footer = () => {
           <h3 className="pb-3 font-bold">Follow us</h3>
           <div className="grid gap-1 grid-cols-3 ">
             <a className=" hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-4 sm:w-4 h-4 " src="/images/google.svg" />
+              <img className="w-4 sm:w-4 h-4 " src="/images/facebook.svg" />
             </a>
             <a className="hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-4 sm:w-5 h-4" src="/images/facebook.svg" />
+              <img className="w-4 sm:w-5 h-4" src="/images/google.svg" />
             </a>
             <a className="hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-5 sm:w-8 h-4" src="/images/coolicon.svg" />
+              <img className="w-5 sm:w-8 h-4" src="/images/twitter.svg" />
             </a>
           </div>
         </div>
