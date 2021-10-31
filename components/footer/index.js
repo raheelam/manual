@@ -2,7 +2,7 @@ import SocialIcon from "./SocialIcon";
 
 const Footer = () => {
   return (
-    <footer className="bg-primaryLight   pt-3 sm:px-10 xl:px-40 pb-5 text-xs  sm:text-base lg:text-lg  ">
+    <footer className="bg-primaryLight pt-3 sm:px-10 xl:px-40 pb-5 text-xs  sm:text-base lg:text-lg  ">
       <section className="flex justify-between p-3">
         <div>
           <img width="25px" src="/images/logo.png" />
