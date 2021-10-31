@@ -14,7 +14,7 @@ const Hero = ({ setIsQuizMode }) => {
           </p>
           <button
             onClick={() => setIsQuizMode(true)}
-            className="inline-block bg-sonAccent hover:bg-red-800 mt-2 sm:mt-5 text-white p-1 sm:p-3 text-xs sm:text-sm"
+            className="inline-block  bg-sonAccent hover:bg-red-800 mt-2 sm:mt-5 text-white p-1 sm:p-3 text-xs sm:text-sm"
           >
             Take the quiz
           </button>

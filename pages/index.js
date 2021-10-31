@@ -1,13 +1,9 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import Services from "../components/services";
 import Quiz from "../components/Quiz";
-
-// export const config = {
-//   unstable_runtimeJs: false,
-// };
 
 export default function Home() {
   const [isQuizMode, setIsQuizMode] = useState(false);

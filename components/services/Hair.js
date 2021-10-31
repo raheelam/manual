@@ -4,7 +4,7 @@ const Hair = () => {
       <div className="grid  grid-cols-1  sm:flex sm:flex-row-reverse h-auto w-full    ">
         <div className="bg-one-image m-auto bg-contain bg-no-repeat bg-right-bottom pr-20 sm:-ml-3 lg:-ml-5 xl:-ml-7 flex items-center  sm:pl-20 sm:pr-0 xl:pl-24   w-full h-auto  sm:h-64     sm:bg-left-bottom">
           <div>
-            <h3 className="text-lg lg:text-3xl font-bold mb-2">Hair loss</h3>
+            <h2 className="text-lg lg:text-3xl font-bold mb-2">Hair loss</h2>
             <p className="block mb-2">
               Hair loss needn’t be irreversible. We can help!
             </p>

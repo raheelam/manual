@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Quiz({ setIsQuizMode }) {
   const [questions, setQuestions] = useState([]);
@@ -72,7 +73,9 @@ export default function Quiz({ setIsQuizMode }) {
                     <p
                       className="w-full tablet:w-5/6 mx-auto text-center"
                       dangerouslySetInnerHTML={{
-                        __html: op.display.replace("\\", ""),
+                        __html: op.display
+                          .replace("\\", "")
+                          .replace("<img", "<Image "),
                       }}
                     />
                     <p className="text-sm sm:text-xl xl:text-2xl">

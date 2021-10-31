@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer className="bg-primaryLight   pt-3 sm:px-10 xl:px-40 pb-5 text-xs  sm:text-base lg:text-lg  ">
@@ -25,17 +27,32 @@ const Footer = () => {
           <p>Customer Service</p>
           <p>Get started</p>
         </div>
-        <div>
+        <div className="w-24">
           <h3 className="pb-3 font-bold">Follow us</h3>
-          <div className="grid gap-1 grid-cols-3 ">
-            <a className=" hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-4 sm:w-4 h-4 " src="/images/facebook.svg" />
+          <div className="grid gap-1   grid-cols-3 ">
+            <a className=" hover:w-5 " href="#">
+              <Image
+                width="24px"
+                height="24px"
+                alt="facebook_logo"
+                src="/images/facebook.svg"
+              />
             </a>
-            <a className="hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-4 sm:w-5 h-4" src="/images/google.svg" />
+            <a className="hover:w-5 " href="#">
+              <Image
+                width="24px"
+                height="24px"
+                alt="google_logo"
+                src="/images/google.svg"
+              />
             </a>
-            <a className="hover:bg-primarySolid hover:rounded-full" href="#">
-              <img className="w-5 sm:w-8 h-4" src="/images/twitter.svg" />
+            <a className="hover:w-5  " href="#">
+              <Image
+                width="24px"
+                height="24px"
+                alt="twitter_logo"
+                src="/images/twitter.svg"
+              />
             </a>
           </div>
         </div>
