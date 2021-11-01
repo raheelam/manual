@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function Quiz({ setIsQuizMode }) {
-  const [questions, setQuestions] = useState([]);
+export default function Quiz({ setIsQuizMode, questions }) {
+  const [answers, setAnswers] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [isEnd, setIsEnd] = useState(false);
   const [result, setResult] = useState("");
-  const getQuestions = () => {
-    fetch("/api/questionnaires")
-      .then((resp) => resp.json())
-      .then((resp) => setQuestions(resp.questions))
-      .catch((err) => console.log(err));
-  };
+  // const getQuestions = () => {
+  //   fetch("/api/questionnaires")
+  //     .then((resp) => resp.json())
+  //     .then((resp) => setQuestions(resp.questions))
+  //     .catch((err) => console.log(err));
+  // };
 
+  //useEffect(() => {
+  //   getQuestions();
+  // }, []);
   useEffect(() => {
-    getQuestions();
+    setAnswers(questions.map(() => ({ answer: null })));
   }, []);
 
   if (questions.length === 0) {
@@ -58,15 +62,16 @@ export default function Quiz({ setIsQuizMode }) {
 
                         return;
                       }
-                      setQuestions((questions) => {
-                        return questions.map((q, i) =>
-                          i === currentPage - 1 ? { ...q, answer: op.value } : q
+                      setAnswers((answers) => {
+                        return answers.map((a, i) =>
+                          i === currentPage - 1 ? { answer: op.value } : a
                         );
                       });
                     }}
                     className={
                       " m-0 border   shadow-inner  cursor-pointer border-2 hover:bg-primaryLight border-gray-200 sm:border-gray-300 rounded p-2 sm:p-3  " +
-                      (questions[currentPage - 1].answer === op.value
+                      (answers.length > 0 &&
+                      answers[currentPage - 1].answer === op.value
                         ? " bg-primaryLight  border-primarySolid sm:border-gray-600 "
                         : "")
                     }
@@ -101,7 +106,10 @@ export default function Quiz({ setIsQuizMode }) {
 
               {currentPage < questions.length && (
                 <button
-                  disabled={questions[currentPage - 1].answer === undefined}
+                  disabled={
+                    answers.length > 0 &&
+                    answers[currentPage - 1].answer === null
+                  }
                   className="p-3 px-10 lg:px-20 bg-primarySolid  text-white rounded float-right disabled:opacity-50"
                   onClick={() => setCurrentPage(currentPage + 1)}
                 >
@@ -110,7 +118,10 @@ export default function Quiz({ setIsQuizMode }) {
               )}
               {currentPage === questions.length && (
                 <button
-                  disabled={questions[currentPage - 1].answer === undefined}
+                  disabled={
+                    answers.length > 0 &&
+                    answers[currentPage - 1].answer === null
+                  }
                   className="p-3 px-10  sm:px-20 bg-primarySolid text-white rounded float-right disabled:opacity-50"
                   onClick={() => {
                     setResult(
